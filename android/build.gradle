@@ -1,0 +1,30 @@
+buildscript {
+    ext.kotlin_version = '1.8.10'  // Kotlin version
+    repositories {
+        google()  // Google's Maven repository
+        mavenCentral()  // Maven Central repository
+    }
+    dependencies {
+        // Add the Google services classpath to allow Firebase configuration
+        classpath 'com.google.gms:google-services:4.4.2'  // Google Services Plugin
+        classpath 'com.android.tools.build:gradle:7.3.0'  // Android Gradle Plugin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"  // Kotlin Gradle plugin
+    }
+}
+
+allprojects {
+    repositories {
+        google()  // Ensure Google's Maven repository is available for all projects
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = '../build'
+
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
