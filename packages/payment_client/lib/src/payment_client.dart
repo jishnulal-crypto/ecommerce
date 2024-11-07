@@ -4,10 +4,10 @@ import 'package:http/http.dart' as http;
 
 // TODO: Add your Cloud Functions URLs here
 const ENDPOINT_METHOD_ID_URL =
-    "https://stripe-pay-endpoint-method-id-yln66foica-uc.a.run.app";
+    "https://stripe-pay-endpoint-method-id-yln66foica-uc.a.run.app"; // not able to get these urls due to unbilled gcp
 
 const ENDPOINT_INTENT_ID_URL =
-    "https://stripe-pay-endpoint-intent-id-yln66foica-uc.a.run.app";
+    "https://stripe-pay-endpoint-intent-id-yln66foica-uc.a.run.app"; //not able to get these urls due to unbilled gcp
 
 class PaymentClient {
   final http.Client client;
