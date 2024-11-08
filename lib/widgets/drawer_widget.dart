@@ -1,4 +1,5 @@
 import 'package:ecommerce_with_flutter_firebase_and_stripe/screens/category_screen.dart';
+import 'package:ecommerce_with_flutter_firebase_and_stripe/screens/contact_screen.dart';
 import 'package:ecommerce_with_flutter_firebase_and_stripe/screens/login_screen.dart';
 import 'package:ecommerce_with_flutter_firebase_and_stripe/screens/profile_screen.dart';
 import 'package:ecommerce_with_flutter_firebase_and_stripe/screens/register_screen.dart';
@@ -46,7 +47,7 @@ class DrawerWidget extends StatelessWidget {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => ProfileScreen()),
+                  MaterialPageRoute(builder: (context) => ContactScreen()),
                 );
               },
               child: Text('contact us'))
