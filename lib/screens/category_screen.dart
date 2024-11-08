@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:ecommerce_with_flutter_firebase_and_stripe/main.dart';
 import 'package:ecommerce_with_flutter_firebase_and_stripe/models/category.dart';
 import 'package:ecommerce_with_flutter_firebase_and_stripe/utils/prefs.dart';
+import 'package:ecommerce_with_flutter_firebase_and_stripe/widgets/drawer_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -43,9 +44,13 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        categoryRepository.createCategories();
-      }),
+      drawer: DrawerWidget(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          categoryRepository.createCategories();
+        },
+        child: Icon(Icons.add),
+      ),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: const Text('Categories'),
