@@ -22,15 +22,11 @@ void main() {
 
     testWidgets('successful registration navigates to CategoriesScreen',
         (WidgetTester tester) async {
-      // Arrange: Mock the Firebase createUserWithEmailAndPassword to return a user 
- when(mockFirebaseAuth.createUserWithEmailAndPassword(
+      // Arrange: Mock the Firebase createUserWithEmailAndPassword to return a user
+      when(mockFirebaseAuth.createUserWithEmailAndPassword(
         email: 'test@example.com',
         password: 'password123',
-      )).thenAnswer((s) async => UserCredential(
-        user: mockUser,
-        additionalUserInfo: AdditionalUserInfo(isNewUser: true, providerId: ''),
-        credential: AuthCredential(providerId: '', signInMethod: ''),
-      ));
+      )).thenReturn(Future.value());
       // Act: Build the RegisterScreen widget
       await tester.pumpWidget(
         MaterialApp(
